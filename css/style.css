@@ -48,6 +48,10 @@ table {
 }
 
 /* GENERAL */
+html, body {
+    height: 100%;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -61,6 +65,7 @@ body {
 	background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
 	font-family: 'Arimo', sans-serif;
+	font-size: 16px;
 }
 
 .wrapper {
@@ -81,6 +86,35 @@ body {
 	text-decoration: line-through;
 }
 
-#todo li:nth-child(even){
+#todo {
+	cursor: pointer;
+	color: #333;
+	font-size: 1.313em;
+}
+
+#todo li {
+	height: 2.5em;
+	line-height: 2.5em;
+}
+
+#todo li:nth-child(even) {
 	background: #ececec;
+}
+
+#delBTN {
+    background: #ff3430;
+	border: 0;
+	cursor: pointer;
+    color: #fafafa;
+    font-size: 1em;
+    height: 2.5em;
+    margin: 0 0 0.625em 0;
+	outline: 0;
+	padding: 0;
+	transform: all .3s ease;
+	width: 0;
+}
+
+#todo li:hover #delBTN {
+	width: 2.5em;
 }

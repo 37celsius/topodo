@@ -23,14 +23,14 @@ let fadeOut = function(el){
 		el.style.opacity = op;
 		el.style.filter = 'alpha(opacity=' + op * 100 + ')';
 		op -= op * 0.1;
-	}, 30);
+	}, 10);
 }
 
 inputTodo.addEventListener('keypress', function(e){
 	inputTodoVal = this.value;
 	if(e.which === 13){
 		if(inputTodoVal.length > 0){
-			listTodo.innerHTML += '<li rel="list"><button id="delBTN" rel="delete"><i class="fa fa-trash"></i></button>' + inputTodoVal + '</li>';
+			listTodo.innerHTML += '<li rel="list"><button id="delBTN" rel="delete" class="fa fa-trash"></button>' + inputTodoVal + '</li>';
 			this.value = '';
 		} else {
 			alert('nope')
