@@ -1,3 +1,25 @@
+/* GOOGLE FONTS */
+@font-face {
+    font-family: 'Arimo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Arimo-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Arimo-bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Arimo-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Arimo-italic';
+    font-style: italic;
+    font-weight: 400;
+    src: url(../fonts/Arimo-Italic.ttf) format('truetype');
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,6 +70,10 @@ table {
 }
 
 /* GENERAL */
+html, body {
+    height: 100%;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -61,6 +87,7 @@ body {
 	background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
 	font-family: 'Arimo', sans-serif;
+	font-size: 16px;
 }
 
 .wrapper {
@@ -72,15 +99,70 @@ body {
 
 /* HEADER SECTION */
 #inputTodo {
-	width: 100%;
+    background: #fafafa;
+    border: 4px solid #fafafa;
+    color: #333;
+	font-family: 'Arimo-bold', sans-serif;
+    font-size: 1.313em;
+    line-height: 1;
+    padding: 0.625em;
+    width: 100%;
+}
+
+#inputTodo::-webkit-input-placeholder {
+   color: #dedede;
+}
+
+#inputTodo::-moz-placeholder {  /* Firefox 19+ */
+   color: #dedede;  
+}
+
+#inputTodo:-ms-input-placeholder {  
+   color: #dedede;  
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 /* TODO LIST */
 .completed {
 	color: #c3c3c3;
 	text-decoration: line-through;
+	font-family: 'Arimo-italic', sans-serif;
 }
 
-#todo li:nth-child(even){
+#todo {
+	color: #333;
+	font-size: 1.125em;
+}
+
+#todo li {
+	cursor: pointer;
+	height: 2.5em;
+	line-height: 2.5em;
+}
+
+#todo li:nth-child(even) {
 	background: #ececec;
+}
+
+#delBTN {
+    background: #ff3430;
+	border: 0;
+	cursor: pointer;
+    color: #fafafa;
+    font-size: 1em;
+    height: 2.5em;
+    margin: 0 0.625em 0 0;
+    opacity: 0;
+	outline: 0;
+	padding: 0;
+	transition: all .3s ease;
+	width: 0;
+}
+
+#todo li:hover #delBTN {
+	opacity: 1;
+	width: 2.5em;
 }
