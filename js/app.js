@@ -24,7 +24,7 @@ let fadeOut = function(el){
 		el.style.opacity = op;
 		el.style.filter = 'alpha(opacity=' + op * 100 + ')';
 		op -= op * 0.1;
-	}, 100);
+	}, 5);
 }
 
 inputTodo.addEventListener('keypress', function(e){
@@ -32,11 +32,15 @@ inputTodo.addEventListener('keypress', function(e){
 	if(e.which === 13){
 		if(inputTodoVal.length > 4){
 			listTodo.innerHTML += '<li rel="list"><button id="delBTN" rel="delete" class="fa fa-trash"></button>' + inputTodoVal + '</li>';
+			errorMSG.innerHTML = '';
 			errorMSG.classList.remove('errorMessage-on');
 			this.value = '';
 		} else {
+			errorMSG.innerHTML = '<p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please enter five or more characters</p>';
 			errorMSG.classList.add('errorMessage-on');
-			
+			setTimeout(function(){
+				errorMSG.classList.remove('errorMessage-on');
+			}, 5000);
 		}
 	}
 });
