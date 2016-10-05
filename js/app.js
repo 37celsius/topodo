@@ -1,6 +1,7 @@
 // Capture all variable needed
 let inputTodo = document.getElementById('inputTodo'),
 	listTodo = document.getElementById('todo'),
+	errorMSG = document.querySelector('.errorMessage'),
 	inputTodoVal;
 
 // Create a function to detect the classname in LI
@@ -23,17 +24,19 @@ let fadeOut = function(el){
 		el.style.opacity = op;
 		el.style.filter = 'alpha(opacity=' + op * 100 + ')';
 		op -= op * 0.1;
-	}, 10);
+	}, 100);
 }
 
 inputTodo.addEventListener('keypress', function(e){
 	inputTodoVal = this.value;
 	if(e.which === 13){
-		if(inputTodoVal.length > 0){
+		if(inputTodoVal.length > 4){
 			listTodo.innerHTML += '<li rel="list"><button id="delBTN" rel="delete" class="fa fa-trash"></button>' + inputTodoVal + '</li>';
+			errorMSG.classList.remove('errorMessage-on');
 			this.value = '';
 		} else {
-			alert('nope')
+			errorMSG.classList.add('errorMessage-on');
+			
 		}
 	}
 });
