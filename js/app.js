@@ -38,6 +38,7 @@ inputTodo.addEventListener('keypress', function(e){
 		} else {
 			errorMSG.innerHTML = '<p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please enter five or more characters</p>';
 			errorMSG.classList.add('errorMessage-on');
+			this.value = '';
 			setTimeout(function(){
 				errorMSG.classList.remove('errorMessage-on');
 			}, 5000);
